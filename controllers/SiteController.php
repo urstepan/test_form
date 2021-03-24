@@ -152,11 +152,9 @@ class SiteController extends Controller
           }
         }
         
-        if($filtOrder){
-            $orders = $filtOrder;
-        }else{
+
             $orders = Order::find()->all();
-        }
+        
         $contractors = User::find()->where(['Role_id'=>3])->all();
 
         return $this->render('index', [
